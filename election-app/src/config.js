@@ -10,7 +10,7 @@ var ContractData = function () {};
 ContractData.electionAbi =electionAbi;
 
 // contract adderess deployed on blockchain
-ContractData.electionAddress ='0x0227858b459260490DFb17370213DcA119deE1b1';
+ContractData.electionAddress ='0x81aa20BA69230c148a3dd4B6B93bbA7596cC47Db';
 
 // your provider url
 ContractData.provider="http://localhost:8545";

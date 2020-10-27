@@ -2142,10 +2142,17 @@
       "links": {},
       "address": "0x0227858b459260490DFb17370213DcA119deE1b1",
       "transactionHash": "0xf5f78691fac4a8dfa18d7d7a41b06b1f50f33054868f61985cb120f3509f96d6"
+    },
+    "1603780950835": {
+      "events": {},
+      "links": {},
+      "address": "0x81aa20BA69230c148a3dd4B6B93bbA7596cC47Db",
+      "transactionHash": "0xf9d647d1698960f48fc03f0ec67e54ee817bc851d0a4e8a4151714a9925b5562"
     }
   },
   "schemaVersion": "3.3.1",
-  "updatedAt": "2020-10-26T05:46:33.282Z",
+  "updatedAt": "2020-10-27T06:46:48.561Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {}
   },

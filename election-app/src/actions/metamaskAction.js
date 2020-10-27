@@ -56,17 +56,22 @@ export function checkWeb3(status) {
 }
 
 export function connectMetamask(status) {
+  console.log("connect meta mask called")
   return (dispatch) => {
+    dispatch(web3Object(null))
     const web3 = new Web3(window.ethereum);
+    console.log("WEB # IS",web3)
     dispatch(web3Object(web3))
     if (window.ethereum) {
       if (window.ethereum.selectedAddress) {
+        console.log("IN IF");
         // this.web3 = web3;
         // this.metaMaskInstalled = true;
         dispatch(isMetaMaskInstalled(true));
         // this.fetchNetworkId();
         dispatch(fetchNetworkId(web3));
       } else {
+        console.log("in else")
         if (status) {
           window.ethereum
             .enable()
@@ -81,17 +86,20 @@ export function connectMetamask(status) {
             });
         } else {
         //   this.metaMaskInstalled = true;
+        dispatch(fetchNetworkId(web3));
           dispatch(isMetaMaskInstalled(true));
         }
       }
     } else {
     //   this.metaMaskInstalled = false;
+    console.log("IN LAST ELSE METAMASK NOT INSATALLED")
       dispatch(isMetaMaskInstalled(false));
     }
   };
 }
 
 export function fetchNetworkId(web3) {
+  console.log("fetch network id called");
   return (dispatch) => {
     web3.eth.net.getId().then((resp) => {
       // this.netWorkId = resp;
@@ -104,6 +112,8 @@ export function fetchNetworkId(web3) {
 export function fetchAccounts(web3) {
   return (dispatch) => {
     web3.eth.getAccounts().then((resp) => {
+
+      console.log("account response is:",resp)
       // this.accounts = resp;
       dispatch(accounts(resp));
       if (resp.length === 0) {
